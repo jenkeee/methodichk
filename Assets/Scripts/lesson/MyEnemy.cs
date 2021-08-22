@@ -1,27 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MyEnemy : MonoBehaviour
 {
-         [SerializeField] private int _health;
+    
+    /// //////////////////////////////// для счетчика
+        public GameObject ScoreText;
+   public int Score;
+    public GameEnding gameEnding;
+    public AudioSource exitAudio;
+    public CanvasGroup exitBackgroundImageCanvasGroup;
 
-        public void Hurt(int damage)
+    [SerializeField] private int _health;
+    
+   /* public void Count()
+    {
+        Score++;        
+        ScoreText.GetComponent<Text>().text = "закидано какахами: " + Score.ToString() + "/ 4.";
+        if (Score >=4)
+        gameEnding.EndLevel(exitBackgroundImageCanvasGroup, false , exitAudio);
+    }*/
+
+    public void Hurt(int damage)
         {
             print("Ouch: " +damage);
 
             _health -= damage; ;
 
             if (_health <= 0)
-            {
-                Die();
+            {            
+                            Die();
             }
         }
 
         private void Die()
         {
-        gameObject.SetActive(false);
-          // Destroy(gameObject);
+        gameEnding.Count();
+        gameObject.SetActive(false);        
+                  // Destroy(gameObject);
     }
 
     private void OnCollisionEnter (Collision other)
@@ -33,9 +51,9 @@ public class MyEnemy : MonoBehaviour
         }
     }
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        Score = 0;
     }
 
     // Update is called once per frame

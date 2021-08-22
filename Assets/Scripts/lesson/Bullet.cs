@@ -25,9 +25,9 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             var enemy = other.GetComponent<MyEnemy>();
-            enemy.Hurt(_pistolDMG);
+            enemy.Hurt(_pistolDMG);            
             //Destroy(gameObject);
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
     }
 }

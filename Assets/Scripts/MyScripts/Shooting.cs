@@ -34,7 +34,7 @@ public class Shooting : MonoBehaviour
    
 
 
-    public bool m_playerHasPistol = false;
+    bool m_playerHasPistol = false;
     [Tooltip("—юда требуетьс€ положить объект который исчезнет когда лемон его возмет")]
     public UnityEngine.Object m_PlasmaGun;
     private void Awake()

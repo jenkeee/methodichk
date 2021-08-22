@@ -216,6 +216,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 840455984}
     m_Modifications:
+    - target: {fileID: 1251823599440206725, guid: 39d0626ce76d1884da050e0e509a5540,
+        type: 3}
+      propertyPath: _health
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251823599440206725, guid: 39d0626ce76d1884da050e0e509a5540,
+        type: 3}
+      propertyPath: ScoreText
+      value: 
+      objectReference: {fileID: 1830950621}
+    - target: {fileID: 1251823599440206725, guid: 39d0626ce76d1884da050e0e509a5540,
+        type: 3}
+      propertyPath: exitAudio
+      value: 
+      objectReference: {fileID: 206311978}
+    - target: {fileID: 1251823599440206725, guid: 39d0626ce76d1884da050e0e509a5540,
+        type: 3}
+      propertyPath: gameEnding
+      value: 
+      objectReference: {fileID: 5642716984738007026}
+    - target: {fileID: 1251823599440206725, guid: 39d0626ce76d1884da050e0e509a5540,
+        type: 3}
+      propertyPath: exitBackgroundImageCanvasGroup
+      value: 
+      objectReference: {fileID: 3195947575264462198}
     - target: {fileID: 4078855156467671687, guid: 39d0626ce76d1884da050e0e509a5540,
         type: 3}
       propertyPath: player
@@ -291,7 +316,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1251823599440206725, guid: 39d0626ce76d1884da050e0e509a5540, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 39d0626ce76d1884da050e0e509a5540, type: 3}
 --- !u!4 &50719415 stripped
 Transform:
@@ -1461,6 +1487,11 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[3]
       value: 
       objectReference: {fileID: 177692767}
+    - target: {fileID: 3751484280772504296, guid: abeb186619cc7e6419cb81e1e4dfa162,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4257817316179491928, guid: abeb186619cc7e6419cb81e1e4dfa162,
         type: 3}
       propertyPath: player
@@ -1481,6 +1512,26 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6501015842533665649, guid: abeb186619cc7e6419cb81e1e4dfa162,
+        type: 3}
+      propertyPath: ScoreText
+      value: 
+      objectReference: {fileID: 1830950621}
+    - target: {fileID: 6501015842533665649, guid: abeb186619cc7e6419cb81e1e4dfa162,
+        type: 3}
+      propertyPath: exitAudio
+      value: 
+      objectReference: {fileID: 206311978}
+    - target: {fileID: 6501015842533665649, guid: abeb186619cc7e6419cb81e1e4dfa162,
+        type: 3}
+      propertyPath: gameEnding
+      value: 
+      objectReference: {fileID: 5642716984738007026}
+    - target: {fileID: 6501015842533665649, guid: abeb186619cc7e6419cb81e1e4dfa162,
+        type: 3}
+      propertyPath: exitBackgroundImageCanvasGroup
+      value: 
+      objectReference: {fileID: 3195947575264462198}
     - target: {fileID: 6925745739663848697, guid: abeb186619cc7e6419cb81e1e4dfa162,
         type: 3}
       propertyPath: m_RootOrder
@@ -3051,6 +3102,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 840455984}
     m_Modifications:
+    - target: {fileID: 1251823599440206725, guid: 39d0626ce76d1884da050e0e509a5540,
+        type: 3}
+      propertyPath: _health
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251823599440206725, guid: 39d0626ce76d1884da050e0e509a5540,
+        type: 3}
+      propertyPath: ScoreText
+      value: 
+      objectReference: {fileID: 1830950621}
+    - target: {fileID: 1251823599440206725, guid: 39d0626ce76d1884da050e0e509a5540,
+        type: 3}
+      propertyPath: exitAudio
+      value: 
+      objectReference: {fileID: 206311978}
+    - target: {fileID: 1251823599440206725, guid: 39d0626ce76d1884da050e0e509a5540,
+        type: 3}
+      propertyPath: gameEnding
+      value: 
+      objectReference: {fileID: 5642716984738007026}
+    - target: {fileID: 1251823599440206725, guid: 39d0626ce76d1884da050e0e509a5540,
+        type: 3}
+      propertyPath: exitBackgroundImageCanvasGroup
+      value: 
+      objectReference: {fileID: 3195947575264462198}
     - target: {fileID: 4078855156467671687, guid: 39d0626ce76d1884da050e0e509a5540,
         type: 3}
       propertyPath: player
@@ -3126,7 +3202,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1251823599440206725, guid: 39d0626ce76d1884da050e0e509a5540, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 39d0626ce76d1884da050e0e509a5540, type: 3}
 --- !u!4 &1407275731 stripped
 Transform:
@@ -3283,6 +3360,11 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 1621696774}
+    - target: {fileID: 3751484280772504296, guid: abeb186619cc7e6419cb81e1e4dfa162,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4257817316179491928, guid: abeb186619cc7e6419cb81e1e4dfa162,
         type: 3}
       propertyPath: player
@@ -3303,6 +3385,26 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6501015842533665649, guid: abeb186619cc7e6419cb81e1e4dfa162,
+        type: 3}
+      propertyPath: ScoreText
+      value: 
+      objectReference: {fileID: 1830950621}
+    - target: {fileID: 6501015842533665649, guid: abeb186619cc7e6419cb81e1e4dfa162,
+        type: 3}
+      propertyPath: exitAudio
+      value: 
+      objectReference: {fileID: 206311978}
+    - target: {fileID: 6501015842533665649, guid: abeb186619cc7e6419cb81e1e4dfa162,
+        type: 3}
+      propertyPath: gameEnding
+      value: 
+      objectReference: {fileID: 5642716984738007026}
+    - target: {fileID: 6501015842533665649, guid: abeb186619cc7e6419cb81e1e4dfa162,
+        type: 3}
+      propertyPath: exitBackgroundImageCanvasGroup
+      value: 
+      objectReference: {fileID: 3195947575264462198}
     - target: {fileID: 6925745739663848697, guid: abeb186619cc7e6419cb81e1e4dfa162,
         type: 3}
       propertyPath: m_RootOrder
@@ -4564,6 +4666,11 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 1811816029}
+    - target: {fileID: 3751484280772504296, guid: abeb186619cc7e6419cb81e1e4dfa162,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4257817316179491928, guid: abeb186619cc7e6419cb81e1e4dfa162,
         type: 3}
       propertyPath: player
@@ -4584,6 +4691,26 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6501015842533665649, guid: abeb186619cc7e6419cb81e1e4dfa162,
+        type: 3}
+      propertyPath: ScoreText
+      value: 
+      objectReference: {fileID: 1830950621}
+    - target: {fileID: 6501015842533665649, guid: abeb186619cc7e6419cb81e1e4dfa162,
+        type: 3}
+      propertyPath: exitAudio
+      value: 
+      objectReference: {fileID: 206311978}
+    - target: {fileID: 6501015842533665649, guid: abeb186619cc7e6419cb81e1e4dfa162,
+        type: 3}
+      propertyPath: gameEnding
+      value: 
+      objectReference: {fileID: 5642716984738007026}
+    - target: {fileID: 6501015842533665649, guid: abeb186619cc7e6419cb81e1e4dfa162,
+        type: 3}
+      propertyPath: exitBackgroundImageCanvasGroup
+      value: 
+      objectReference: {fileID: 3195947575264462198}
     - target: {fileID: 6925745739663848697, guid: abeb186619cc7e6419cb81e1e4dfa162,
         type: 3}
       propertyPath: m_RootOrder
@@ -5068,6 +5195,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 840455984}
     m_Modifications:
+    - target: {fileID: 1251823599440206725, guid: 39d0626ce76d1884da050e0e509a5540,
+        type: 3}
+      propertyPath: _health
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251823599440206725, guid: 39d0626ce76d1884da050e0e509a5540,
+        type: 3}
+      propertyPath: ScoreText
+      value: 
+      objectReference: {fileID: 1830950621}
+    - target: {fileID: 1251823599440206725, guid: 39d0626ce76d1884da050e0e509a5540,
+        type: 3}
+      propertyPath: exitAudio
+      value: 
+      objectReference: {fileID: 206311978}
+    - target: {fileID: 1251823599440206725, guid: 39d0626ce76d1884da050e0e509a5540,
+        type: 3}
+      propertyPath: gameEnding
+      value: 
+      objectReference: {fileID: 5642716984738007026}
+    - target: {fileID: 1251823599440206725, guid: 39d0626ce76d1884da050e0e509a5540,
+        type: 3}
+      propertyPath: exitBackgroundImageCanvasGroup
+      value: 
+      objectReference: {fileID: 3195947575264462198}
     - target: {fileID: 4078855156467671687, guid: 39d0626ce76d1884da050e0e509a5540,
         type: 3}
       propertyPath: player
@@ -5143,7 +5295,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1251823599440206725, guid: 39d0626ce76d1884da050e0e509a5540, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 39d0626ce76d1884da050e0e509a5540, type: 3}
 --- !u!4 &2008973354732098957 stripped
 Transform:
@@ -7792,7 +7945,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4012380625681614536}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6077229646317852088
+--- !u!114 &6077229646317852089
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7801,11 +7954,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6077229646317852079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc0cbee41725b454791e1e1420aafd1f, type: 3}
+  m_Script: {fileID: 11500000, guid: e2da9ac9c8a50e9489ecd9c3cd0bce3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: 0
-  ScoreText: {fileID: 1830950621}
 --- !u!1001 &6136966654407605910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7858,6 +8009,26 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6501015842533665649, guid: abeb186619cc7e6419cb81e1e4dfa162,
+        type: 3}
+      propertyPath: ScoreText
+      value: 
+      objectReference: {fileID: 1830950621}
+    - target: {fileID: 6501015842533665649, guid: abeb186619cc7e6419cb81e1e4dfa162,
+        type: 3}
+      propertyPath: exitAudio
+      value: 
+      objectReference: {fileID: 206311978}
+    - target: {fileID: 6501015842533665649, guid: abeb186619cc7e6419cb81e1e4dfa162,
+        type: 3}
+      propertyPath: gameEnding
+      value: 
+      objectReference: {fileID: 5642716984738007026}
+    - target: {fileID: 6501015842533665649, guid: abeb186619cc7e6419cb81e1e4dfa162,
+        type: 3}
+      propertyPath: exitBackgroundImageCanvasGroup
+      value: 
+      objectReference: {fileID: 3195947575264462198}
     - target: {fileID: 6925745739663848697, guid: abeb186619cc7e6419cb81e1e4dfa162,
         type: 3}
       propertyPath: m_RootOrder
@@ -7964,6 +8135,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 6077229646317852079}
+    - target: {fileID: 5642716984738007026, guid: 3d8158841df6b824eb4a665f82a99938,
+        type: 3}
+      propertyPath: ScoreText
+      value: 
+      objectReference: {fileID: 1830950621}
     - target: {fileID: 5642716984738007026, guid: 3d8158841df6b824eb4a665f82a99938,
         type: 3}
       propertyPath: exitAudio
