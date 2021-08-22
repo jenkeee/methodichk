@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameEnding : MonoBehaviour
 {
@@ -11,10 +12,14 @@ public class GameEnding : MonoBehaviour
     public CanvasGroup caughtBackgroundImageCanvasGroup;
     public AudioSource caughtAudio;
 
-    bool m_IsPlayerAtExit;
+    public bool m_IsPlayerAtExit;
     bool m_IsPlayerCaught;
     float m_Timer;
     bool m_HasAudioPlayed;
+
+    /// //////////////////////////////// для счетчика
+    public GameObject ScoreText;
+    int Score =0;
     
     void OnTriggerEnter (Collider other)
     {
@@ -28,6 +33,13 @@ public class GameEnding : MonoBehaviour
     {
         m_IsPlayerCaught = true;
     }
+    public void Count()
+    {
+        Score ++;
+        ScoreText.GetComponent<Text>().text = "закидано какахами: " + Score.ToString() + "/ 4.";
+        //if (Score >= 4) ;
+            //gameEnding.EndLevel(exitBackgroundImageCanvasGroup, false, exitAudio);
+    }
 
     void Update ()
     {
@@ -35,13 +47,18 @@ public class GameEnding : MonoBehaviour
         {
             EndLevel (exitBackgroundImageCanvasGroup, false, exitAudio);
         }
+        else if (Score >= 4) m_IsPlayerAtExit = true;
+        else if (!m_IsPlayerCaught)
+        {
+            if (player.transform.position.y < -30) m_IsPlayerCaught = true;
+        }
         else if (m_IsPlayerCaught)
         {
             EndLevel (caughtBackgroundImageCanvasGroup, true, caughtAudio);
         }
     }
 
-    void EndLevel (CanvasGroup imageCanvasGroup, bool doRestart, AudioSource audioSource)
+   public void EndLevel (CanvasGroup imageCanvasGroup, bool doRestart, AudioSource audioSource)
     {
         if (!m_HasAudioPlayed)
         {

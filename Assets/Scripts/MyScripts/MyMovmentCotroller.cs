@@ -16,6 +16,18 @@ public class MyMovmentCotroller : MonoBehaviour
     Quaternion m_Rotation = Quaternion.identity;
 
 
+    [SerializeField]
+    [Tooltip("Можем установить силу прыжка")]
+    private float jumpPower;
+
+    public bool isGrounded = true;
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        isGrounded = true;
+            }
+
+
     private Transform cameraTransform; // будем поворачивать лемона
 
     private void Awake()
@@ -50,7 +62,12 @@ public class MyMovmentCotroller : MonoBehaviour
         bool hasVerticalInput = !Mathf.Approximately(Z, 0f);
         bool isWalking = hasHorizontalInput || hasVerticalInput;
         m_Animator.SetBool("IsWalking", isWalking);
-
+                if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            isGrounded = false;         
+            GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpPower*1000, 0));
+        }
+        //m_Animator.SetBool("IsJump", !isGrounded); // отключил анимацию чтоб лемон летал нормально. я думаю это связанно с массой ригитбади
         if (isWalking)
         {
             if (!m_AudioSource.isPlaying)
