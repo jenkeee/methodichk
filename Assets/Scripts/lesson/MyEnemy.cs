@@ -20,12 +20,20 @@ public class MyEnemy : MonoBehaviour
 
         private void Die()
         {
-            Destroy(gameObject);
+        gameObject.SetActive(false);
+          // Destroy(gameObject);
     }
 
-
-// Start is called before the first frame update
-void Start()
+    private void OnCollisionEnter (Collision other)
+    {
+        if (other.collider.tag == "Bullet") {
+            Vector3 vel = other.collider.GetComponent<Rigidbody>().velocity;
+            GetComponent<Rigidbody>().AddForce(vel * 500, ForceMode.Impulse);
+           // other.collider.gameObject.SetActive(false); // позже обработаю
+        }
+    }
+    // Start is called before the first frame update
+    void Start()
     {
         
     }
