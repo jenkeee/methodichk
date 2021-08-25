@@ -118,3 +118,53 @@ C# parse time         : 369ms
 candidates check time : 53ms
 console write time    : 0ms
 
+[api-updater (non-obsolete-error-filter)] 23.08.2021 3:51:10 : Starting E:/UnityHub/2020.3.13f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 607,1775ms
+moved types parse time: 116ms
+candidates parse time : 2ms
+C# parse time         : 556ms
+candidates check time : 88ms
+console write time    : 1ms
+
+[api-updater (non-obsolete-error-filter)] 23.08.2021 4:07:31 : Starting E:/UnityHub/2020.3.13f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 189,0261ms
+moved types parse time: 110ms
+candidates parse time : 2ms
+C# parse time         : 389ms
+candidates check time : 83ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 25.08.2021 8:18:51 : Starting E:/UnityHub/2020.3.13f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 781,7461ms
+moved types parse time: 114ms
+candidates parse time : 2ms
+C# parse time         : 505ms
+candidates check time : 89ms
+console write time    : 1ms
+
+[api-updater (non-obsolete-error-filter)] 25.08.2021 8:28:57 : Starting E:/UnityHub/2020.3.13f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 467,9985ms
+moved types parse time: 174ms
+candidates parse time : 2ms
+C# parse time         : 466ms
+candidates check time : 91ms
+console write time    : 1ms
+
+[api-updater (non-obsolete-error-filter)] 25.08.2021 9:35:44 : Starting E:/UnityHub/2020.3.13f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 191,0013ms
+moved types parse time: 102ms
+candidates parse time : 2ms
+C# parse time         : 336ms
+candidates check time : 50ms
+console write time    : 0ms
+

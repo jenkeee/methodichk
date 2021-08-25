@@ -6,7 +6,7 @@ using UnityEngine;
 // https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnControllerColliderHit.html
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private int _pistolDMG;
+    [SerializeField] private int pistolDMG;
 
     /*private void 
     private void OnParticleCollision(GameObject other)
@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             var enemy = other.GetComponent<MyEnemy>();
-            enemy.Hurt(_pistolDMG);            
+            enemy.Hurt(pistolDMG);            
             //Destroy(gameObject);
             //gameObject.SetActive(false);
         }

@@ -62,20 +62,24 @@ public class MyMovmentCotroller : MonoBehaviour
         bool hasVerticalInput = !Mathf.Approximately(Z, 0f);
         bool isWalking = hasHorizontalInput || hasVerticalInput;
         m_Animator.SetBool("IsWalking", isWalking);
-                if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            isGrounded = false;         
-            GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpPower*1000, 0));
+            isGrounded = false;
+            // GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpPower * 1000, 0));
+            Vector3 jump = new Vector3(0, jumpPower * 1000, 0);
+            m_Rigidbody.AddRelativeForce(jump, ForceMode.Force);
         }
-        //m_Animator.SetBool("IsJump", !isGrounded); // отключил анимацию чтоб лемон летал нормально. я думаю это связанно с массой ригитбади
-        if (isWalking)
+         m_Animator.SetBool("IsJump", !isGrounded);
+        // отключил анимацию чтоб лемон летал нормально. я думаю это связанно с массой ригитбади
+        
+        if (isWalking && isGrounded)
         {
             if (!m_AudioSource.isPlaying)
             {
                 m_AudioSource.Play();
             }
         }
-        else
+                else
         {
             m_AudioSource.Stop();
         }

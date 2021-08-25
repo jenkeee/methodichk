@@ -44,11 +44,11 @@ public class MyEnemy : MonoBehaviour
 
     private void OnCollisionEnter (Collision other)
     {
-        if (other.collider.tag == "Bullet") {
+       /* if (other.collider.tag == "Bullet") {
             Vector3 vel = other.collider.GetComponent<Rigidbody>().velocity;
             GetComponent<Rigidbody>().AddForce(vel * 500, ForceMode.Impulse);
            // other.collider.gameObject.SetActive(false); // позже обработаю
-        }
+        }*/
     }
     // Start is called before the first frame update
     void Awake()

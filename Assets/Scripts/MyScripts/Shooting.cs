@@ -81,6 +81,8 @@ public class Shooting : MonoBehaviour
                 toDisable = currentBulletIndex - 5;
                 if (toDisable < 0) toDisable = 0;
                 {
+                    
+                  
                     if (currentBulletIndex == 0)
                     {
                         Rigidbody bulletDisable = bulletPoolTr.GetChild(bulletPoolTr.childCount - 5).GetComponent<Rigidbody>();

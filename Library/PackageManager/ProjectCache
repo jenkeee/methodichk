@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637650534582816014
+      ticks: 637654657227073184
     m_Hash: 1228036846
   m_LockFileStatus:
     m_FilePath: E:/projectfolder/GBlesson2/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637650534625917848
+      ticks: 637654657227473195
     m_Hash: 2313243452
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -444,11 +444,13 @@ m_PackageAssets:
         - 2.6.4
         - 2.6.5
         - 2.6.9
+        - 2.6.10
         - 2.7.1
         - 2.7.2
         - 2.7.3
         - 2.7.4
         - 2.7.5
+        - 2.7.8
         - 2.8.0-exp.1
         - 2.8.0-exp.2
         - 2.8.0-pre.1
@@ -469,16 +471,18 @@ m_PackageAssets:
         - 2.6.4
         - 2.6.5
         - 2.6.9
+        - 2.6.10
         - 2.7.1
         - 2.7.2
         - 2.7.3
         - 2.7.4
         - 2.7.5
+        - 2.7.8
         - 2.8.0-exp.1
         - 2.8.0-exp.2
         - 2.8.0-pre.1
         - 2.8.0
-        verified: 2.6.9
+        verified: 2.6.10
       dependencies: []
       resolvedDependencies: []
       keywords:
@@ -1071,6 +1075,7 @@ m_PackageAssets:
         - 3.2.2
         - 3.2.3
         - 4.0.0
+        - 4.0.3
         compatible:
         - 0.0.3
         - 0.0.4
@@ -1110,6 +1115,7 @@ m_PackageAssets:
         - 3.2.2
         - 3.2.3
         - 4.0.0
+        - 4.0.3
         verified: 3.2.3
       dependencies:
       - name: com.unity.ugui
