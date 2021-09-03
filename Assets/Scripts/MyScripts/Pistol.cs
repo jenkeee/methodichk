@@ -71,6 +71,7 @@ public class Pistol : MonoBehaviour
                 GameObject targetGameObject = MyPistol as GameObject;
                 if (targetGameObject != null)
                     targetGameObject.SetActive(true);
+                Cursor.lockState = CursorLockMode.Locked;
             }
             
         }

@@ -77,6 +77,7 @@ public class Shooting : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
+                
                 #region пулинг пуль с очередью в 5, позже обработать
                 toDisable = currentBulletIndex - 5;
                 if (toDisable < 0) toDisable = 0;
