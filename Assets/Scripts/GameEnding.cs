@@ -73,11 +73,16 @@ public class GameEnding : MonoBehaviour
         {
             if (doRestart)
             {
-                SceneManager.LoadScene (0);
+                Cursor.lockState = CursorLockMode.None;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
             }
             else
             {
-                Application.Quit ();
+                Cursor.lockState = CursorLockMode.None;
+                if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings-1) SceneManager.LoadScene(0);
+                else
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
             }
         }
     }
