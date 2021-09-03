@@ -31,12 +31,24 @@ public class Shooting : MonoBehaviour
     int currentBulletIndex = 0;
     int toDisable;
 
-   
 
+
+    public bool hasPistol = false;
+    public bool hasKey = false;
+    bool flag_key = false;
 
     bool m_playerHasPistol = false;
-    [Tooltip("—юда требуетьс€ положить объект который исчезнет когда лемон его возмет")]
+    [Tooltip("—юда требуетьс€ положить объект от которого эвент от колизии")]
     public UnityEngine.Object m_PlasmaGun;
+    [Tooltip("—юда требуетьс€ положить объект пистоли в руке")]
+    public UnityEngine.Object m_MyPistol;
+    [Tooltip("—юда требуетьс€ положить объект MyItem что в правой руке")]
+    public Transform m_MyItem;
+    [Tooltip("—юда требуетьс€ положить ключь что в правой руке")]
+    public Transform m_Key;
+    [Tooltip("—юда требуетьс€ положить объект от которого эвент от колизии (ключь)")]
+    public Object collision_key;
+
     private void Awake()
     {
         PlayerRigidbody = GetComponent<Rigidbody>(); // обращаемс€ к компоненту ригитбоди
@@ -66,105 +78,170 @@ public class Shooting : MonoBehaviour
     }*/
     void OnTriggerEnter(Collider otherCollider)
     {
-
         if (otherCollider.gameObject == m_PlasmaGun)
-        { m_playerHasPistol = true; }
+        { m_playerHasPistol = true; hasPistol = true; }
+        else if (otherCollider.gameObject == collision_key)
+        { flag_key = true; hasKey = true; }
+
     }
-            // Update is called once per frame
-            void Update()
+
+    public void GetMyKey()
     {
+        hasKey = true;
+    }
+
+    void Update()
+    {
+        Object MyPistol = m_MyPistol;
+        if (flag_key)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                if (hasKey)
+                {
+                    hasPistol = false;
+                    hasKey = false;
+                    for (int i = 0; i < m_MyItem.childCount; i++)
+                        m_MyItem.GetChild(i).gameObject.SetActive(false);
+                }
+                else if (!hasKey)
+                {
+                    for (int i = 0; i < m_MyItem.childCount; i++)
+                        m_MyItem.GetChild(i).gameObject.SetActive(false);
+                    hasPistol = false;
+                    hasKey = true;
+                    m_Key.gameObject.SetActive(true);
+                }
+
+            }
+        }
         if (m_playerHasPistol)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                
-                #region пулинг пуль с очередью в 5, позже обработать
-                toDisable = currentBulletIndex - 5;
-                if (toDisable < 0) toDisable = 0;
+                if (hasPistol)
                 {
-                    
-                  
-                    if (currentBulletIndex == 0)
+                    hasPistol = false;
+                    GameObject targetGameObject = MyPistol as GameObject;
+                    if (targetGameObject != null)
+                        targetGameObject.SetActive(false);
+
+                    for (int i = 0; i < m_MyItem.childCount ; i++)
+                        m_MyItem.GetChild(i).gameObject.SetActive(false);
+                   
+                }
+                else if (!hasPistol)
+                {
+                    hasPistol = true;
+                    for (int i = 0; i < m_MyItem.childCount; i++)
+                        m_MyItem.GetChild(i).gameObject.SetActive(false);
+                    GameObject targetGameObject = MyPistol as GameObject;
+                    if (targetGameObject != null)
+                        targetGameObject.SetActive(true);
+                }
+
+            }
+            
+        }
+
+
+        if (m_playerHasPistol)
+        {
+            if (hasPistol)
+            {
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+
+                    #region пулинг пуль с очередью в 5, позже обработать
+                    toDisable = currentBulletIndex - 5;
+                    if (toDisable < 0) toDisable = 0;
                     {
-                        Rigidbody bulletDisable = bulletPoolTr.GetChild(bulletPoolTr.childCount - 5).GetComponent<Rigidbody>();
-                        Rigidbody bulletRB = bulletPoolTr.GetChild(currentBulletIndex).GetComponent<Rigidbody>();
-                        bulletRB.gameObject.SetActive(true);
-                        bulletDisable.gameObject.SetActive(false);
-                        bulletRB.position = ShootingPoint.position;
-                        bulletRB.velocity = Vector3.zero;
-                        bulletRB.AddForce(Camera.main.transform.forward * bulletSpeed, ForceMode.Impulse);
-                        currentBulletIndex++;
+
+
+                        if (currentBulletIndex == 0)
+                        {
+                            Rigidbody bulletDisable = bulletPoolTr.GetChild(bulletPoolTr.childCount - 5).GetComponent<Rigidbody>();
+                            Rigidbody bulletRB = bulletPoolTr.GetChild(currentBulletIndex).GetComponent<Rigidbody>();
+                            bulletRB.gameObject.SetActive(true);
+                            bulletDisable.gameObject.SetActive(false);
+                            bulletRB.position = ShootingPoint.position;
+                            bulletRB.velocity = Vector3.zero;
+                            bulletRB.AddForce(Camera.main.transform.forward * bulletSpeed, ForceMode.Impulse);
+                            currentBulletIndex++;
+                        }
+                        else if (currentBulletIndex == 1)
+                        {
+                            Rigidbody bulletDisable = bulletPoolTr.GetChild(bulletPoolTr.childCount - 4).GetComponent<Rigidbody>();
+                            Rigidbody bulletRB = bulletPoolTr.GetChild(currentBulletIndex).GetComponent<Rigidbody>();
+                            bulletRB.gameObject.SetActive(true);
+                            bulletDisable.gameObject.SetActive(false);
+                            bulletRB.position = ShootingPoint.position;
+                            bulletRB.velocity = Vector3.zero;
+                            bulletRB.AddForce(Camera.main.transform.forward * bulletSpeed, ForceMode.Impulse);
+                            currentBulletIndex++;
+                        }
+                        else if (currentBulletIndex == 2)
+                        {
+                            Rigidbody bulletDisable = bulletPoolTr.GetChild(bulletPoolTr.childCount - 3).GetComponent<Rigidbody>();
+                            Rigidbody bulletRB = bulletPoolTr.GetChild(currentBulletIndex).GetComponent<Rigidbody>();
+                            bulletRB.gameObject.SetActive(true);
+                            bulletDisable.gameObject.SetActive(false);
+                            bulletRB.position = ShootingPoint.position;
+                            bulletRB.velocity = Vector3.zero;
+                            bulletRB.AddForce(Camera.main.transform.forward * bulletSpeed, ForceMode.Impulse);
+                            currentBulletIndex++;
+                        }
+                        else if (currentBulletIndex == 3)
+                        {
+                            Rigidbody bulletDisable = bulletPoolTr.GetChild(bulletPoolTr.childCount - 2).GetComponent<Rigidbody>();
+                            Rigidbody bulletRB = bulletPoolTr.GetChild(currentBulletIndex).GetComponent<Rigidbody>();
+                            bulletRB.gameObject.SetActive(true);
+                            bulletDisable.gameObject.SetActive(false);
+                            bulletRB.position = ShootingPoint.position;
+                            bulletRB.velocity = Vector3.zero;
+                            bulletRB.AddForce(Camera.main.transform.forward * bulletSpeed, ForceMode.Impulse);
+                            currentBulletIndex++;
+                        }
+                        else if (currentBulletIndex == 4)
+                        {
+                            Rigidbody bulletDisable = bulletPoolTr.GetChild(bulletPoolTr.childCount - 1).GetComponent<Rigidbody>();
+                            Rigidbody bulletRB = bulletPoolTr.GetChild(currentBulletIndex).GetComponent<Rigidbody>();
+                            bulletRB.gameObject.SetActive(true);
+                            bulletDisable.gameObject.SetActive(false);
+                            bulletRB.position = ShootingPoint.position;
+                            bulletRB.velocity = Vector3.zero;
+                            bulletRB.AddForce(Camera.main.transform.forward * bulletSpeed, ForceMode.Impulse);
+                            currentBulletIndex++;
+                        }
+                        else if (currentBulletIndex > 0)
+                        {
+                            Rigidbody bulletDisable = bulletPoolTr.GetChild(toDisable).GetComponent<Rigidbody>();
+                            Rigidbody bulletRB = bulletPoolTr.GetChild(currentBulletIndex).GetComponent<Rigidbody>();
+                            bulletRB.gameObject.SetActive(true);
+                            bulletDisable.gameObject.SetActive(false);
+                            bulletRB.position = ShootingPoint.position;
+                            bulletRB.velocity = Vector3.zero;
+                            bulletRB.AddForce(Camera.main.transform.forward * bulletSpeed, ForceMode.Impulse);
+                            currentBulletIndex++;
+                        }
+                        if (currentBulletIndex >= bulletPoolTr.childCount)
+                        {
+                            currentBulletIndex = 0;
+                        }
                     }
-                    else if (currentBulletIndex == 1)
+
+                    #endregion
+
+                }
+            }
+        }
+                    if (Input.GetKeyDown(KeyCode.G))
                     {
-                        Rigidbody bulletDisable = bulletPoolTr.GetChild(bulletPoolTr.childCount - 4).GetComponent<Rigidbody>();
-                        Rigidbody bulletRB = bulletPoolTr.GetChild(currentBulletIndex).GetComponent<Rigidbody>();
-                        bulletRB.gameObject.SetActive(true);
-                        bulletDisable.gameObject.SetActive(false);
-                        bulletRB.position = ShootingPoint.position;
-                        bulletRB.velocity = Vector3.zero;
-                        bulletRB.AddForce(Camera.main.transform.forward * bulletSpeed, ForceMode.Impulse);
-                        currentBulletIndex++;
-                    }
-                    else if (currentBulletIndex == 2)
-                    {
-                        Rigidbody bulletDisable = bulletPoolTr.GetChild(bulletPoolTr.childCount - 3).GetComponent<Rigidbody>();
-                        Rigidbody bulletRB = bulletPoolTr.GetChild(currentBulletIndex).GetComponent<Rigidbody>();
-                        bulletRB.gameObject.SetActive(true);
-                        bulletDisable.gameObject.SetActive(false);
-                        bulletRB.position = ShootingPoint.position;
-                        bulletRB.velocity = Vector3.zero;
-                        bulletRB.AddForce(Camera.main.transform.forward * bulletSpeed, ForceMode.Impulse);
-                        currentBulletIndex++;
-                    }
-                    else if (currentBulletIndex == 3)
-                    {
-                        Rigidbody bulletDisable = bulletPoolTr.GetChild(bulletPoolTr.childCount - 2).GetComponent<Rigidbody>();
-                        Rigidbody bulletRB = bulletPoolTr.GetChild(currentBulletIndex).GetComponent<Rigidbody>();
-                        bulletRB.gameObject.SetActive(true);
-                        bulletDisable.gameObject.SetActive(false);
-                        bulletRB.position = ShootingPoint.position;
-                        bulletRB.velocity = Vector3.zero;
-                        bulletRB.AddForce(Camera.main.transform.forward * bulletSpeed, ForceMode.Impulse);
-                        currentBulletIndex++;
-                    }
-                    else if (currentBulletIndex == 4)
-                    {
-                        Rigidbody bulletDisable = bulletPoolTr.GetChild(bulletPoolTr.childCount - 1).GetComponent<Rigidbody>();
-                        Rigidbody bulletRB = bulletPoolTr.GetChild(currentBulletIndex).GetComponent<Rigidbody>();
-                        bulletRB.gameObject.SetActive(true);
-                        bulletDisable.gameObject.SetActive(false);
-                        bulletRB.position = ShootingPoint.position;
-                        bulletRB.velocity = Vector3.zero;
-                        bulletRB.AddForce(Camera.main.transform.forward * bulletSpeed, ForceMode.Impulse);
-                        currentBulletIndex++;
-                    }
-                    else if (currentBulletIndex > 0)
-                    {
-                        Rigidbody bulletDisable = bulletPoolTr.GetChild(toDisable).GetComponent<Rigidbody>();
-                        Rigidbody bulletRB = bulletPoolTr.GetChild(currentBulletIndex).GetComponent<Rigidbody>();
-                        bulletRB.gameObject.SetActive(true);
-                        bulletDisable.gameObject.SetActive(false);
-                        bulletRB.position = ShootingPoint.position;
-                        bulletRB.velocity = Vector3.zero;
-                        bulletRB.AddForce(Camera.main.transform.forward * bulletSpeed, ForceMode.Impulse);
-                        currentBulletIndex++;
-                    }
-                    if (currentBulletIndex >= bulletPoolTr.childCount)
-                    {
-                        currentBulletIndex = 0;
+                        GameObject temp = Instantiate(MyMine, MinePoint.position, Quaternion.identity);
+                        Destroy(temp, 5f);
                     }
                 }
-                #endregion
             }
+        
 
-            if (Input.GetKeyDown(KeyCode.G))
-            {
-                GameObject temp = Instantiate(MyMine, MinePoint.position, Quaternion.identity); 
-                Destroy(temp, 5f);
-            }            
-        }
-    }
-}
-    
 
