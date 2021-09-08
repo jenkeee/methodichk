@@ -10,7 +10,7 @@ public class patrul : MonoBehaviour
     float y = .1f;
     [SerializeField]
     float z;
-    public  Transform player;
+    public Transform player;
     Vector3 PlayerPos;
     [Tooltip("скорость с которой фоловим игрока")]
     public float speed;
@@ -19,6 +19,7 @@ public class patrul : MonoBehaviour
     private static float t_lostPlayer;
 
     public static bool findEnemy = false;
+    public static bool visionEnemy = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,7 @@ public class patrul : MonoBehaviour
         PlayerPos = player.transform.position;
         Vector3 direction = PlayerPos - transform.position;
         Vector3 newDirection = Vector3.RotateTowards(transform.forward, direction, speed * Time.deltaTime, 0);
+
         newDirection.y = 0;
         
 
@@ -52,15 +54,15 @@ public class patrul : MonoBehaviour
             }
         }
         else if (findEnemy)
-        {
-
-            transform.rotation = Quaternion.LookRotation(newDirection);
+        { 
+                    transform.rotation = Quaternion.LookRotation(newDirection);                
         }
         
     }
 
     public static void FindEnemy()
     {
+
         findEnemy = true;       
     }
     public static void LostEnemy()

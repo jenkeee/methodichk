@@ -6,33 +6,55 @@ using UnityEngine.SceneManagement;
 public class turrelFire : MonoBehaviour
 {
     public GameObject player;
+    public Transform Player;
 
 
+    Vector3 PlayerPos;
 
+    bool findEnemy;
+    bool lostEnemy;
     // Start is called before the first frame update
-    void Start()
+    public static void Start()
     {
         
     }
 
-    // Update is called once per frame
+
+    private void OnTriggerStay(Collider other)
+    {
+
+            if (other.gameObject == player)
+            {
+            findEnemy = true; 
+            }
+         
+    }
     void Update()
     {
-        
-    }
-    private void OnTriggerStay(Collider other)
-    { 
-        if (other.gameObject == player) { 
-            
-            patrul.FindEnemy();
-        } 
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject == player)
-        {
-        
-            patrul.LostEnemy();
+        PlayerPos = player.transform.position;
+        Vector3 direction = PlayerPos - transform.position;
+        Vector3 newDirection = Vector3.RotateTowards(transform.forward, direction,  Time.deltaTime, 0);
+        Ray ray = new Ray(transform.position, direction);
+        RaycastHit raycastHit;
+        if (findEnemy) { 
+        if (Physics.Raycast(ray, out raycastHit))
+            {
+                if (raycastHit.collider.transform == Player)
+                {
+                    patrul.FindEnemy();
+                }
+            }
         }
+    }
+
+        private void OnTriggerExit(Collider other)
+    {
+        
+                if (other.gameObject == player )
+                {
+            findEnemy = false;
+                    patrul.LostEnemy();
+                }
+       
     }
 }
