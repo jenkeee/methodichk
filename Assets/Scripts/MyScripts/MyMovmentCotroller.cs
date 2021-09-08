@@ -67,13 +67,14 @@ using UnityEngine;
             bool hasVerticalInput = !Mathf.Approximately(Z, 0f);
             bool isWalking = hasHorizontalInput || hasVerticalInput;
             m_Animator.SetBool("IsWalking", isWalking);
-            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+       
+        if (Input.GetKey(KeyCode.Space) && isGrounded)
             {
                 isGrounded = false;
-                // GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpPower * 1000, 0));
-                Vector3 jump = new Vector3(0, jumpPower * 1000, 0);
+              //  GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpPower * 1000, 0));
+                Vector3 jump = new Vector3(input.x, jumpPower * 1000, input.y);
                 m_Rigidbody.AddRelativeForce(jump, ForceMode.Force);
-            }
+        }
             m_Animator.SetBool("IsJump", !isGrounded);
             // отключил анимацию чтоб лемон летал нормально. я думаю это связанно с массой ригитбади
 

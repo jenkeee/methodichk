@@ -47,7 +47,7 @@ public class GameEnding : MonoBehaviour
         {
             EndLevel (exitBackgroundImageCanvasGroup, false, exitAudio);
         }
-        else if (Score >= 4) m_IsPlayerAtExit = true;
+        else if (Score >= 5) m_IsPlayerAtExit = true;
         else if (!m_IsPlayerCaught)
         {
             if (player.transform.position.y < -30) m_IsPlayerCaught = true;
