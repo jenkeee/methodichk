@@ -62,7 +62,6 @@ public class patrul : MonoBehaviour
 
     public static void FindEnemy()
     {
-
         findEnemy = true;       
     }
     public static void LostEnemy()

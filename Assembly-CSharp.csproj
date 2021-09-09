@@ -70,13 +70,15 @@
     <Compile Include="Assets\Scripts\MyScripts\Bird\NewWaypointPatrol.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\MyScripts\MyMovmentCotroller.cs" />
+    <Compile Include="Assets\Scripts\MyScripts\lvl2\ScrollDoor.cs" />
     <Compile Include="Assets\Scripts\lesson\Mine.cs" />
     <Compile Include="Assets\Scripts\MyScripts\Bird\BirdBoss.cs" />
     <Compile Include="Assets\Scripts\MyScripts\Swither.cs" />
     <Compile Include="Assets\Scripts\lesson\PrimitiveControls.cs" />
     <Compile Include="Assets\Scripts\LightFlicker.cs" />
     <Compile Include="Assets\Scripts\MyScripts\Pistol.cs" />
-    <Compile Include="Assets\Scripts\MyScripts\lvl2\ScrollDoor.cs" />
+    <Compile Include="Assets\Scripts\MyScripts\lvl2\turrel\t_grd.cs" />
+    <Compile Include="Assets\Scripts\MyScripts\lvl2\turrel\t_shooting.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
