@@ -12,6 +12,9 @@ public class t_grd : MonoBehaviour
     [Tooltip("врем€ через которое начнет обрабатыватьс€ колизи€")]
     [SerializeField] double time_avoid_in = 50;
     bool readyTo = false;
+
+   // public Explode myForit; // экземпл€р класса
+        public GameObject srapnel;   
     /*private void 
     private void OnParticleCollision(GameObject other)
     {
@@ -34,6 +37,12 @@ public class t_grd : MonoBehaviour
              //gameObject.SetActive(false);
          }
      }*/
+    public float radius = 5.0F;
+    public float power = 10.0F;
+    void Start()
+    {
+       
+    }
     void Update()
     {
         if (gameObject)
@@ -47,12 +56,18 @@ public class t_grd : MonoBehaviour
             else if (time_avoid == 0)
             {
                 if (readyTo)
-                {
+                { /*
+                    GameObject temp = Instantiate(srapnel, gameObject.transform.position, Quaternion.identity);
+                    Rigidbody tempRB = temp.GetComponent<Rigidbody>();
+                    tempRB.AddExplosionForce(power, gameObject.transform.position, radius, 3.0F);
+                    Destroy(temp, 5f);
+*/
+
                     gameObject.SetActive(false);
+
                 }                
             }
         }
-
     }
     private void OnEnable()
     {
@@ -60,15 +75,28 @@ public class t_grd : MonoBehaviour
     }
     private void OnDisable()
     {
-      
+        Explode.Notrdy_Explosion();
     }
     private void OnCollisionEnter(Collision collision)
     {
-            readyTo = true;        
+        if (!collision.gameObject.CompareTag("Trka"))
+        {
+            /*int i;
+            for (i=0;i<2;i++)
+            {*/
+            /* GameObject temp = Instantiate(srapnel, gameObject.transform.position, Quaternion.identity);
+             Rigidbody tempRB = temp.GetComponent<Rigidbody>();
+             tempRB.AddExplosionForce(power, gameObject.transform.position, radius, 3.0F);
+             Destroy(temp, 1f);*/
+            Explode.rdy_Explosion();
+            readyTo = true;
+        }
     }
     private void OnCollisionStay(Collision collision)
     {
-        readyTo = true;
+        if (!collision.gameObject.CompareTag("Trka"))
+            readyTo = true;
     }
+
 }
 

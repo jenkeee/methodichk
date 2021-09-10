@@ -127,7 +127,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  time_avoid: 50
+  time_avoid_in: 50
+  srapnel: {fileID: 3184461875074123194, guid: 11c0b640ab2de294a94b998a4fad082f, type: 3}
+  radius: 5
+  power: 10
 --- !u!1 &883042216294251808
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +145,7 @@ GameObject:
   - component: {fileID: 3486143530972987167}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Trka
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -385,7 +388,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPoolTr: {fileID: 4648176986058546067}
-  ShootingPoint: {fileID: 1494905171597083506}
+  ShootingPoint: {fileID: 2321876657580988697}
+  t_fire: 5
 --- !u!1 &2905849746644506229
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,7 +404,7 @@ GameObject:
   - component: {fileID: 7132882852092983978}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Trka
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -498,7 +502,7 @@ GameObject:
   - component: {fileID: 4006845368695416380}
   m_Layer: 0
   m_Name: PatrolLook
-  m_TagString: Untagged
+  m_TagString: Trka
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -730,17 +734,9 @@ MonoBehaviour:
   assetGuid: 
   m_Mesh: {fileID: 0}
   m_IsSelectable: 1
-  m_SelectedFaces: 00000000
-  m_SelectedEdges:
-  - a: 0
-    b: 1
-  - a: 2
-    b: 0
-  - a: 1
-    b: 3
-  - a: 3
-    b: 2
-  m_SelectedVertices: 00000000010000000200000003000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!23 &5169225075445958253
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -861,7 +857,7 @@ GameObject:
   - component: {fileID: 5015622011437328795}
   m_Layer: 0
   m_Name: trka
-  m_TagString: Untagged
+  m_TagString: Trka
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -896,6 +892,7 @@ GameObject:
   - component: {fileID: 7037154717802299402}
   - component: {fileID: 2651058464195180430}
   - component: {fileID: 1405546453}
+  - component: {fileID: 3265815535513971249}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -1009,4 +1006,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  time_avoid: 50
+  time_avoid_in: 50
+  srapnel: {fileID: 3184461875074123194, guid: 11c0b640ab2de294a94b998a4fad082f, type: 3}
+  radius: 5
+  power: 10
+--- !u!114 &3265815535513971249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8048669569390400302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af87fd7aae170f04196a938f14356dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 0
+  force: 0
