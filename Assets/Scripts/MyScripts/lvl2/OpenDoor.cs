@@ -55,6 +55,7 @@ public class OpenDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (m_IsPlayerGetKey)
         {
             DoOpenDoor(DoorIsOpen);
