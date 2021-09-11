@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2831433656572998235}
   - component: {fileID: 7079269540720089614}
   - component: {fileID: 4486820635208729249}
+  - component: {fileID: 913795773}
   m_Layer: 0
   m_Name: Capsule (1)
   m_TagString: Untagged
@@ -131,6 +132,21 @@ MonoBehaviour:
   srapnel: {fileID: 3184461875074123194, guid: 11c0b640ab2de294a94b998a4fad082f, type: 3}
   radius: 5
   power: 10
+--- !u!114 &913795773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599627116126963531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af87fd7aae170f04196a938f14356dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 20
+  force: 200
+  WHTA: {fileID: 599627116126963531}
 --- !u!1 &883042216294251808
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,5 +1038,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af87fd7aae170f04196a938f14356dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0
-  force: 0
+  radius: 20
+  force: 200
+  WHTA: {fileID: 8048669569390400302}

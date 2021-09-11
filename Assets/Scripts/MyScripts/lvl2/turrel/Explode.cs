@@ -8,9 +8,12 @@ public class Explode : MonoBehaviour
     public float force;
 
     static bool rdy_exp = false;
+
+    [SerializeField] GameObject WHTA;
+    static GameObject thisBoom;
+    
     public void Explosion()
     {
-
         Debug.Log("rdy_exp=true");
         Collider[] overlapedColls = Physics.OverlapSphere(transform.position, radius);
 
@@ -21,19 +24,25 @@ public class Explode : MonoBehaviour
             if (RB)
             {
                 RB.AddExplosionForce(force, transform.position, radius);
+                t_grd.ReadyTo();
             }
+            Notrdy_Explosion();
         }
-
     }
 
     public static void rdy_Explosion()
     {
         rdy_exp = true;
     }
-
-    public static void Notrdy_Explosion()
+    private void Awake()
     {
+        thisBoom = WHTA;
+    }
+    public static void Notrdy_Explosion()
+    {       
         rdy_exp = false;
+        Rigidbody ramble = thisBoom.GetComponent<Rigidbody>();
+        ramble.velocity = Vector3.zero;
     }
 
     private void Update()
