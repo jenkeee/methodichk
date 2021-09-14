@@ -17,6 +17,13 @@ public class ExplosiveBarrel : MonoBehaviour
         // Destroy(gameObject);
     }
 
+    private IEnumerator MyFirstCorutines(int cont)
+    {
+        
+        while (true)
+        { yield return new WaitForSeconds(Random.Range(1, 3)); }
+            }
+
     public void takeDmg(int damage)
     {
         print("бочка: " + damage);
@@ -25,8 +32,14 @@ public class ExplosiveBarrel : MonoBehaviour
 
         if (HP <= 0)
         {
+            MyFirstCorutines(12);
             Die();
             print("бочка: взрыв ");
+            Explode barrelToExp = RB.GetComponent<Explode>();
+            if (barrelToExp)
+            {
+                barrelToExp.Explosion();
+            }
         }
     }
    
