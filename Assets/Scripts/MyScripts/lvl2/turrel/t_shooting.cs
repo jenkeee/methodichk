@@ -38,7 +38,7 @@ public class t_shooting : MonoBehaviour
             Bullet.velocity = Vector3.zero;
             Vector3 grenade = new Vector3(0, 2, 0);
             Bullet.AddForce(gameObject.transform.forward * 10 + grenade, ForceMode.Impulse);
-            Debug.Log("турель щелкнула");
+           // Debug.Log("турель щелкнула");
             currentBulletIndex++;
             findEnemy = false;
         }

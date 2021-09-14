@@ -58,13 +58,16 @@
     <Compile Include="Assets\Scripts\MyScripts\lvl2\turrel\turrelFire.cs" />
     <Compile Include="Assets\Scripts\MyScripts\lvl2\turrel\patrul.cs" />
     <Compile Include="Assets\Scripts\MyScripts\Shooting.cs" />
+    <Compile Include="Assets\MyAddon\Aligned Games\Polygonal Modern Weapons Asset Package\Scripts\Utility\FlyCameraBehaviour.cs" />
     <Compile Include="Assets\Scripts\MyScripts\NumTarget.cs" />
     <Compile Include="Assets\Scripts\lesson\MyEnemy.cs" />
     <Compile Include="Assets\Scripts\lesson\Bullet.cs" />
     <Compile Include="Assets\Scripts\WaypointPatrol.cs" />
+    <Compile Include="Assets\Scripts\MyScripts\lvl3\ShootPistol.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\GameEnding.cs" />
     <Compile Include="Assets\Scripts\Observer.cs" />
+    <Compile Include="Assets\Scripts\MyScripts\lvl3\GetRayPistol.cs" />
     <Compile Include="Assets\Scripts\MyScripts\lvl2\turrel\t_grd.cs" />
     <Compile Include="Assets\Scripts\MyScripts\lvl2\turrel\t_shooting.cs" />
     <Compile Include="Assets\Scripts\MyScripts\SceneLoader.cs" />
@@ -77,9 +80,10 @@
     <Compile Include="Assets\Scripts\MyScripts\Bird\BirdBoss.cs" />
     <Compile Include="Assets\Scripts\MyScripts\Swither.cs" />
     <Compile Include="Assets\Scripts\lesson\PrimitiveControls.cs" />
+    <Compile Include="Assets\Scripts\MyScripts\lvl2\turrel\Explode.cs" />
     <Compile Include="Assets\Scripts\LightFlicker.cs" />
     <Compile Include="Assets\Scripts\MyScripts\Pistol.cs" />
-    <Compile Include="Assets\Scripts\MyScripts\lvl2\turrel\Explode.cs" />
+    <Compile Include="Assets\Scripts\MyScripts\lvl3\ExplosiveBarrel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -89,6 +93,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\3DBeginner_Third-PartyNotice.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\MyAddon\Aligned Games\Polygonal Modern Weapons Asset Package\Shaders\Diffuse.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
