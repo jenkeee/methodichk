@@ -12,16 +12,16 @@ public class MyEnemy : MonoBehaviour
     public GameEnding gameEnding;
     public AudioSource exitAudio;
     public CanvasGroup exitBackgroundImageCanvasGroup;
-
+   static GameObject MyObg;
     [SerializeField] private int _health;
-    
-   /* public void Count()
-    {
-        Score++;        
-        ScoreText.GetComponent<Text>().text = "закидано какахами: " + Score.ToString() + "/ 4.";
-        if (Score >=4)
-        gameEnding.EndLevel(exitBackgroundImageCanvasGroup, false , exitAudio);
-    }*/
+    static int HP = 100;
+    /* public void Count()
+     {
+         Score++;        
+         ScoreText.GetComponent<Text>().text = "закидано какахами: " + Score.ToString() + "/ 4.";
+         if (Score >=4)
+         gameEnding.EndLevel(exitBackgroundImageCanvasGroup, false , exitAudio);
+     }*/
 
     public void Hurt(int damage)
         {
@@ -34,8 +34,21 @@ public class MyEnemy : MonoBehaviour
                             Die();
             }
         }
+    public static void Hurt2(int damage)
+    {
+        print("Ouch2: " + damage);
 
-        private void Die()
+        
+        HP-= damage; 
+
+        if (HP <= 0)
+        {
+            print("Ouch: помер " );
+            MyObg.SetActive(false);
+        }
+    }
+
+    private void Die()
         {
         gameEnding.Count();
         gameObject.SetActive(false);        
@@ -54,6 +67,7 @@ public class MyEnemy : MonoBehaviour
     void Awake()
     {
         Score = 0;
+        MyObg = gameObject;
     }
 
     // Update is called once per frame

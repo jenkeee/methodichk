@@ -11,7 +11,7 @@ public class t_grd : MonoBehaviour
     double time_avoid = 50;
     [Tooltip("врем€ через которое начнет обрабатыватьс€ колизи€")]
     [SerializeField] double time_avoid_in = 50;
-    bool readyTo = false;
+    static bool readyTo = false;
 
    // public Explode myForit; // экземпл€р класса
         public GameObject srapnel;   
@@ -43,6 +43,7 @@ public class t_grd : MonoBehaviour
     {
        
     }
+
     void Update()
     {
         if (gameObject)
@@ -60,11 +61,10 @@ public class t_grd : MonoBehaviour
                     GameObject temp = Instantiate(srapnel, gameObject.transform.position, Quaternion.identity);
                     Rigidbody tempRB = temp.GetComponent<Rigidbody>();
                     tempRB.AddExplosionForce(power, gameObject.transform.position, radius, 3.0F);
-                    Destroy(temp, 5f);
-*/
-
+                    Destroy(temp, 5f);*/
+                    
                     gameObject.SetActive(false);
-
+                   
                 }                
             }
         }
@@ -88,10 +88,11 @@ public class t_grd : MonoBehaviour
              Rigidbody tempRB = temp.GetComponent<Rigidbody>();
              tempRB.AddExplosionForce(power, gameObject.transform.position, radius, 3.0F);
              Destroy(temp, 1f);*/
-            Explode.rdy_Explosion();
-            readyTo = true;
+            Explode.rdy_Explosion();          
         }
     }
+
+    public static void ReadyTo() { readyTo = true; }
     private void OnCollisionStay(Collision collision)
     {
         if (!collision.gameObject.CompareTag("Trka"))

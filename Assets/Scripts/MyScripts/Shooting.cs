@@ -59,29 +59,14 @@ public class Shooting : MonoBehaviour
     void Start()
     {
 
-    }/*
-    private static void DisappearanceLogic(GameObject gameObject)
-    {
-        int num = 0;
-        while (num >= 0)
-        {
-            if (num % 2 == 0)
-            {
-                gameObject.SetActive(false);
-            }
-            else
-            {
-                gameObject.SetActive(true);
-            }
-            num++;
-        }
-    }*/
+    }
+
     void OnTriggerEnter(Collider otherCollider)
-    {
+    {/*
         if (otherCollider.gameObject == m_PlasmaGun)
         { m_playerHasPistol = true; hasPistol = true; }
         else if (otherCollider.gameObject == collision_key)
-        { flag_key = true; hasKey = true; }
+        { flag_key = true; hasKey = true; }*/
 
     }
 
@@ -93,6 +78,12 @@ public class Shooting : MonoBehaviour
     void Update()
     {
         Object MyPistol = m_MyPistol;
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            GameObject temp = Instantiate(MyMine, MinePoint.position, Quaternion.identity);
+            Destroy(temp, 5f);
+        }
+
         if (flag_key)
         {
             if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -126,9 +117,9 @@ public class Shooting : MonoBehaviour
                     if (targetGameObject != null)
                         targetGameObject.SetActive(false);
 
-                    for (int i = 0; i < m_MyItem.childCount ; i++)
+                    for (int i = 0; i < m_MyItem.childCount; i++)
                         m_MyItem.GetChild(i).gameObject.SetActive(false);
-                   
+
                 }
                 else if (!hasPistol)
                 {
@@ -141,7 +132,7 @@ public class Shooting : MonoBehaviour
                 }
 
             }
-            
+
         }
 
 
@@ -235,13 +226,8 @@ public class Shooting : MonoBehaviour
                 }
             }
         }
-                    if (Input.GetKeyDown(KeyCode.G))
-                    {
-                        GameObject temp = Instantiate(MyMine, MinePoint.position, Quaternion.identity);
-                        Destroy(temp, 5f);
-                    }
-                }
-            }
-        
+    }
+}
+                            
 
 
